@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.logo{
+    max-width: 18rem;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: rgb(215, 187, 241);
+}
+
+.listaMenu{
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.listaMenu li a{
+    text-decoration: none;
+    color: rgb(32, 8, 54);
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+.abrirMenu,
+.cerrarMenu{
+    display: none;
+}
+
+/*Se activa cuando llega a 500px*/
+@media screen and (max-width: 500px){
+
+    .abrirMenu, 
+    .cerrarMenu{
+        display: block;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .cerrarMenu{
+        background-color: transparent;
+        color: aliceblue;
+    }
+
+    .menuPrincipal{
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1.5rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(32, 8, 54);
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgb(0, 0, 0, 0.20);
+    }
+
+    .menuPrincipal.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .listaMenu{
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .listaMenu li a{
+        color: aliceblue;
+    }
+
+
+}
